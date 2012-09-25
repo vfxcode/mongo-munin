@@ -6,7 +6,7 @@ do
     x=${out#src/body_}
     x=${x%.py}
     
-    out=mongo_$x
+    out=mongo_${x}_
 
     echo "#!/usr/bin/env python" > $out
     echo "" >> $out
