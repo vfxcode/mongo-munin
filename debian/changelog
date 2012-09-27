@@ -1,0 +1,5 @@
+munin-plugins-mongo (0~20120925-1) unstable; urgency=low
+
+  * Initial Release (commit: abdf1ef083cbc64b05af920ec94753838a5041c0).
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Tue, 25 Sep 2012 16:12:01 +0300

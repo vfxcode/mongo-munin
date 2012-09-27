@@ -1,0 +1,12 @@
+Source: munin-plugins-mongo
+Section: net
+Priority: optional
+Maintainer: Christos Trochalakis <christos@skroutz.gr>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: https://github.com/erh/mongo-munin
+
+Package: munin-plugins-mongo
+Architecture: all
+Description: Munin monitoring plugins for mongodb.
+
