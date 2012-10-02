@@ -8,8 +8,9 @@ def doData():
             print( str(k) + ".value " + str(v * 1024 * 1024) )
 
 def doConfig():
+    host, port = extractHostPort()
 
-    print "graph_title MongoDB memory usage"
+    print "graph_title MongoDB memory usage (%s:%s)" % (host, port)
     print "graph_args --base 1024 -l 0 --vertical-label Bytes"
     print "graph_category MongoDB"
 
