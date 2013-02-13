@@ -1,3 +1,15 @@
+munin-plugins-mongo (0~20121003-1) unstable; urgency=low
+
+  * New release, fix minor bug.
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Tue, 02 Oct 2012 10:28:56 +0300
+
+munin-plugins-mongo (0~20121002-1) unstable; urgency=low
+
+  * New release, including host, port in graph title.
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Tue, 02 Oct 2012 09:44:46 +0300
+
 munin-plugins-mongo (0~20120925-1) unstable; urgency=low
 
   * Initial Release (commit: abdf1ef083cbc64b05af920ec94753838a5041c0).
