@@ -23,7 +23,6 @@ def getServerStatus():
     raw = urllib2.urlopen(req).read()
     return json.loads( raw )["serverStatus"]
 
-getServerStatus()
 
 def ok(s):
     return s == "resident" or s == "virtual" or s == "mapped"

@@ -20,4 +20,3 @@ def getServerStatus():
     raw = urllib2.urlopen(req).read()
     return json.loads( raw )["serverStatus"]
 
-getServerStatus()
