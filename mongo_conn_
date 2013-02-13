@@ -16,12 +16,16 @@ def extractHostPort():
     host, port = basename.split(':')
     return (host, port)
 
-def getServerStatus():
+
+def getServerRequest(action):
     host, port = extractHostPort()
-    url = "http://%s:%s/_status" % (host, port)
+    url = "http://%s:%s/%s" % (host, port, action)
     req = urllib2.Request(url)
     raw = urllib2.urlopen(req).read()
-    return json.loads( raw )["serverStatus"]
+    return json.loads( raw )
+
+def getServerStatus():
+    return getServerRequest('_status')['serverStatus']
 
 
 name = "connections"
