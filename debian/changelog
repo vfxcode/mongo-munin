@@ -1,3 +1,9 @@
+munin-plugins-mongo (0~20140829-1) unstable; urgency=medium
+
+  * Add page faults graph.
+
+ -- Christos Trochalakis <yatiohi@ideopolis.gr>  Fri, 29 Aug 2014 11:31:14 +0300
+
 munin-plugins-mongo (0~20130212-1) unstable; urgency=low
 
   * Add replication graph.
