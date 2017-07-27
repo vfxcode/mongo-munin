@@ -5,29 +5,22 @@
 import urllib2
 import sys
 import os
-
-try:
-    import json
-except ImportError:
-    import simplejson as json
+from bson import json_util
 
 def extractHostPort():
     basename = os.path.basename(__file__).rsplit('_')[-1]
     host, port = basename.split(':')
     return (host, port)
 
-
 def getServerRequest(action):
     host, port = extractHostPort()
     url = "http://%s:%s/%s" % (host, port, action)
     req = urllib2.Request(url)
     raw = urllib2.urlopen(req).read()
-    return json.loads( raw )
+    return json_util.loads( raw )
 
 def getServerStatus():
     return getServerRequest('_status')['serverStatus']
-
-
 
 def doData():
     ss = getServerRequest('replSetGetStatus')
@@ -43,8 +36,7 @@ def doData():
         if member['stateStr'] == 'PRIMARY':
             primary = member
 
-    secs_behind = primary['optime']['t'] - me['optime']['t']
-      
+    secs_behind = (primary['optimeDate'] - me['optimeDate']).total_seconds()
     print('secs_behind.value %i' % secs_behind)
 
 def doConfig():
@@ -63,11 +55,9 @@ def doConfig():
     print "graph_args -l 0"
     print "secs_behind.label Seconds Behind"
 
-
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "config":
         doConfig()
     else:
         doData()
-
 
